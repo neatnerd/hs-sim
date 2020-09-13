@@ -5,6 +5,7 @@ import models.MinionRace;
 
 public class DragonspawnLieutenant extends BaseCard {
     public DragonspawnLieutenant(){
+        super();
         Attack = 2;
         Health = 3;
         Taunt = true;

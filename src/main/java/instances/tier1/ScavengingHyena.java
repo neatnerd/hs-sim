@@ -5,6 +5,7 @@ import models.*;
 public class ScavengingHyena extends BaseCard {
 
     public ScavengingHyena(){
+        super();
         Attack = 2;
         Health = 2;
         TavernTier = 1;

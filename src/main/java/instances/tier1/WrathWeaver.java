@@ -6,6 +6,7 @@ import models.*;
 public class WrathWeaver extends BaseCard {
 
     public WrathWeaver(){
+        super();
         Attack = 1;
         Health = 1;
         Race = MinionRace.NEUTRAL;

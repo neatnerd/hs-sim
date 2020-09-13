@@ -6,6 +6,7 @@ import models.*;
 public class VulgarHomunculus extends BaseCard {
 
     public VulgarHomunculus(){
+        super();
         Attack = 2;
         Health = 4;
         Taunt = true;
