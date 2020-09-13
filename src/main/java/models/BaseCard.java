@@ -1,6 +1,5 @@
 package models;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,6 +12,7 @@ public abstract class BaseCard {
     protected boolean Taunt;
     protected int TavernTier;
     protected boolean Golden;
+    protected MinionRace Race;
 
     // default constructor is used for initial state
     public BaseCard(){
@@ -22,6 +22,7 @@ public abstract class BaseCard {
         Taunt = false;
         Golden = false;
         TavernTier = 1;
+        Race = MinionRace.NEUTRAL;
     }
 
     public void EventProcessor(EventType eventType, Event event, GameState state){};

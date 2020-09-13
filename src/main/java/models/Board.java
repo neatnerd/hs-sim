@@ -38,6 +38,8 @@ public class Board {
         Cards.remove(pos);
     }
 
+    public boolean isPresent(BaseCard card) { return Cards.contains(card); }
+
     public int size() {
         return Cards.size();
     }

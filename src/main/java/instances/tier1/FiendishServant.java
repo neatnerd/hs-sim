@@ -10,6 +10,7 @@ public class FiendishServant extends BaseCard {
         Attack = 2;
         Health = 1;
         TavernTier = 1;
+        Race = MinionRace.DEMON;
     }
 
     @Override

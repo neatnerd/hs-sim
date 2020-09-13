@@ -38,7 +38,7 @@ public class GameState {
         applyReducers(PreProcessors, type, event);
         // let every card know about the event
         // start with player that has originated it
-        for (int i = 0; i<event.getPlayer().getBoard().getCards().size(); i++){
+        for (int i = 0; i < event.getPlayer().getBoard().getCards().size(); i++){
             BaseCard card = event.getPlayer().getBoard().getCards().get(i);
             card.EventProcessor(type, event, this);
         }

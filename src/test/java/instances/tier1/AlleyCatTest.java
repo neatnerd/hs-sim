@@ -15,6 +15,6 @@ public class AlleyCatTest {
         gameState.Trigger(EventType.PLAY, playEvent);
         assertEquals(2, gameState.getPlayer1().getBoard().size(), "Expected only to have to minions on the board");
         assertEquals(true, gameState.getPlayer1().getBoard().getCards().get(0) instanceof AlleyCat, "First card is not alley cat");
-        assertEquals(true, gameState.getPlayer1().getBoard().getCards().get(1) instanceof Tabbycat, "First card is not tabby cat");
+        assertEquals(true, gameState.getPlayer1().getBoard().getCards().get(1) instanceof TabbyCat, "First card is not tabby cat");
     }
 }

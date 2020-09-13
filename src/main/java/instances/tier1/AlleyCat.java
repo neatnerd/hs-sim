@@ -1,9 +1,6 @@
 package instances.tier1;
 
-import models.BaseCard;
-import models.Event;
-import models.EventType;
-import models.GameState;
+import models.*;
 
 public class AlleyCat extends BaseCard{
 
@@ -12,6 +9,7 @@ public class AlleyCat extends BaseCard{
         Attack = 1;
         Health = 1;
         TavernTier = 1;
+        Race = MinionRace.BEAST;
     }
 
     @Override
@@ -20,7 +18,7 @@ public class AlleyCat extends BaseCard{
         if (eventType == EventType.PLAY){
             if (event.getCard() == this){
                 // Summon TabbyCat
-                state.Trigger(EventType.SUMMON, new Event(event.getPlayer(), new Tabbycat(), this));
+                state.Trigger(EventType.SUMMON, new Event(event.getPlayer(), new TabbyCat(), this));
             }
         }
     }

@@ -1,13 +1,15 @@
 package instances.tier1;
 
 import models.BaseCard;
+import models.MinionRace;
 
-public class Tabbycat extends BaseCard {
+public class TabbyCat extends BaseCard {
 
-    public Tabbycat(){
+    public TabbyCat(){
         super();
         Attack = 1;
         Health = 1;
         TavernTier = 1;
+        Race = MinionRace.BEAST;
     }
 }
