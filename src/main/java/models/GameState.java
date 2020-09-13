@@ -1,10 +1,7 @@
 package models;
 
 import lombok.Getter;
-import models.reducers.CardDeath;
-import models.reducers.EmptyReducer;
-import models.reducers.MinionSummon;
-import models.reducers.PlayMinion;
+import models.reducers.*;
 
 import java.util.Map;
 import static java.util.Map.entry;
@@ -27,7 +24,8 @@ public class GameState {
             entry(EventType.ATTACK, new EmptyReducer()),
             entry(EventType.TAKE_DAMAGE, new EmptyReducer()),
             entry(EventType.TURN_START, new EmptyReducer()),
-            entry(EventType.TURN_END, new EmptyReducer())
+            entry(EventType.TURN_END, new EmptyReducer()),
+            entry(EventType.DAMAGE_PLAYER, new PlayerDamage())
     );
     private static final Map<EventType, EventReducer> PostProcessors = Map.ofEntries(
             entry(EventType.DEATH, new CardDeath())

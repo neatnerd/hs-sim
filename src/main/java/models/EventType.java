@@ -7,5 +7,6 @@ public enum EventType {
     SUMMON,
     PLAY,
     TURN_START,
-    TURN_END
+    TURN_END,
+    DAMAGE_PLAYER
 }
