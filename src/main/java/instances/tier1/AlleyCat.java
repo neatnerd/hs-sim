@@ -16,6 +16,7 @@ public class AlleyCat extends BaseCard{
 
     @Override
     public void EventProcessor(EventType eventType, Event event, GameState state) {
+        super.EventProcessor(eventType, event, state);
         if (eventType == EventType.PLAY){
             if (event.getCard() == this){
                 // Summon TabbyCat

@@ -13,8 +13,8 @@ public class AlleyCatTest {
         GameState gameState = new GameState();
         Event playEvent = new Event(gameState.getPlayer1(), new AlleyCat(), null);
         gameState.Trigger(EventType.PLAY, playEvent);
-        assertEquals(gameState.getPlayer1().getBoard().size(), 2, "");
-        assertEquals(gameState.getPlayer1().getBoard().getCards().get(0) instanceof AlleyCat, true, "First card is not alley cat");
-        assertEquals(gameState.getPlayer1().getBoard().getCards().get(1) instanceof Tabbycat, true, "First card is not tabby cat");
+        assertEquals(2, gameState.getPlayer1().getBoard().size(), "Expected only to have to minions on the board");
+        assertEquals(true, gameState.getPlayer1().getBoard().getCards().get(0) instanceof AlleyCat, "First card is not alley cat");
+        assertEquals(true, gameState.getPlayer1().getBoard().getCards().get(1) instanceof Tabbycat, "First card is not tabby cat");
     }
 }

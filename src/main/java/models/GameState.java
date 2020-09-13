@@ -2,6 +2,7 @@ package models;
 
 import lombok.Getter;
 import models.reducers.CardDeath;
+import models.reducers.EmptyReducer;
 import models.reducers.MinionSummon;
 import models.reducers.PlayMinion;
 
@@ -20,20 +21,35 @@ public class GameState {
         Player2 = new Player();
     }
 
-    private static final Map<EventType, EventReducer> ReducersMap = Map.ofEntries(
+    private static final Map<EventType, EventReducer> PreProcessors = Map.ofEntries(
             entry(EventType.PLAY, new PlayMinion()),
-            entry(EventType.DEATH, new CardDeath()),
-            entry(EventType.SUMMON, new MinionSummon())
+            entry(EventType.SUMMON, new MinionSummon()),
+            entry(EventType.ATTACK, new EmptyReducer()),
+            entry(EventType.TAKE_DAMAGE, new EmptyReducer()),
+            entry(EventType.TURN_START, new EmptyReducer()),
+            entry(EventType.TURN_END, new EmptyReducer())
     );
+    private static final Map<EventType, EventReducer> PostProcessors = Map.ofEntries(
+            entry(EventType.DEATH, new CardDeath())
+    );
+
     public void Trigger(EventType type, Event event){
         // first reducers have a standard work to do
-        ReducersMap.get(type).apply(event, this);
+        applyReducers(PreProcessors, type, event);
         // let every card know about the event
         // start with player that has originated it
         for (int i = 0; i<event.getPlayer().getBoard().getCards().size(); i++){
             BaseCard card = event.getPlayer().getBoard().getCards().get(i);
             card.EventProcessor(type, event, this);
         }
+        // run post-processors
+        applyReducers(PostProcessors, type, event);
     }
 
+    private void applyReducers(Map<EventType, EventReducer> map, EventType type, Event event){
+        EventReducer reducer = map.get(type);
+        if (reducer != null){
+            reducer.apply(event, this);
+        }
+    }
 }
