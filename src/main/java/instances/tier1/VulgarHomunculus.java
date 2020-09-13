@@ -1,12 +1,18 @@
 package instances.tier1;
 
 import instances.SimpleCard;
-import models.BaseCard;
-import models.Event;
-import models.EventType;
-import models.GameState;
+import models.*;
 
 public class VulgarHomunculus extends BaseCard {
+
+    public VulgarHomunculus(){
+        Attack = 2;
+        Health = 4;
+        Taunt = true;
+        TavernTier = 1;
+        Race = MinionRace.DEMON;
+    }
+
     @Override
     public void EventProcessor(EventType eventType, Event event, GameState state) {
         super.EventProcessor(eventType, event, state);
