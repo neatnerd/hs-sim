@@ -40,8 +40,10 @@ public class BoardTest {
         boolean res;
         res = board.addCard(DummyCard(), 1);
         assertEquals(true, res, "Normal insert did not work");
-        assertThrows(IndexOutOfBoundsException.class, () -> {board.addCard(DummyCard(), 5);},
-                "did not throw out of bound");
+        res = board.addCard(DummyCard(), board.size());
+        assertEquals(true, res, "Could not insert at the end");
+        assertThrows(IndexOutOfBoundsException.class, () -> {board.addCard(DummyCard(), board.size()+1);},
+                "inserting beyond capacity worked");
 
     }
 

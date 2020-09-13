@@ -1,9 +1,12 @@
 package models;
 
+import lombok.Getter;
+
 import java.util.ArrayList;
 
 public class Board {
     private final int MAX_CAPACITY = 8;
+    @Getter
     private final ArrayList<BaseCard> Cards = new ArrayList<BaseCard>(MAX_CAPACITY);
     public boolean addCard(BaseCard card){
        return addCard(card, Cards.size());
@@ -13,7 +16,8 @@ public class Board {
      * Adds a card to the board. If maximum capacity is reached, card is not inserted
      * @param card Card to be inserted
      * @param pos position at which to insert the card
-     * @return
+     * @return false, if capacity has been reached
+     * @throws IndexOutOfBoundsException
      */
     public boolean addCard(BaseCard card, int pos){
         if (Cards.size() >= MAX_CAPACITY){
