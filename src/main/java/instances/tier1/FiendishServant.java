@@ -7,6 +7,7 @@ public class FiendishServant extends BaseCard {
 
     public FiendishServant(){
         super();
+        id = 3;
         Attack = 2;
         Health = 1;
         TavernTier = 1;

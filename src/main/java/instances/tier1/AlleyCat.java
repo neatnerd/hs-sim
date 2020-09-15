@@ -6,6 +6,7 @@ public class AlleyCat extends BaseCard{
 
     public AlleyCat(){
         super();
+        id = 1;
         Attack = 1;
         Health = 1;
         TavernTier = 1;

@@ -6,6 +6,7 @@ public class ScavengingHyena extends BaseCard {
 
     public ScavengingHyena(){
         super();
+        id = 5;
         Attack = 2;
         Health = 2;
         TavernTier = 1;

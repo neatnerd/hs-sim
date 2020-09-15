@@ -6,6 +6,9 @@ import models.reducers.*;
 import java.util.Map;
 import static java.util.Map.entry;
 
+/**
+ * Main class for representing current state of the game
+ */
 public class GameState {
     @Getter
     private final Player Player1;
@@ -40,6 +43,7 @@ public class GameState {
             BaseCard card = event.getPlayer().getBoard().getCards().get(i);
             card.EventProcessor(type, event, this);
         }
+        // TODO: run for the second player
         // run post-processors
         applyReducers(PostProcessors, type, event);
     }

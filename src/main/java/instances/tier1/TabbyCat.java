@@ -7,6 +7,7 @@ public class TabbyCat extends BaseCard {
 
     public TabbyCat(){
         super();
+        id = 6;
         Attack = 1;
         Health = 1;
         TavernTier = 1;

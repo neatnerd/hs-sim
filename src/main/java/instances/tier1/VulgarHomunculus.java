@@ -7,6 +7,7 @@ public class VulgarHomunculus extends BaseCard {
 
     public VulgarHomunculus(){
         super();
+        id = 7;
         Attack = 2;
         Health = 4;
         Taunt = true;

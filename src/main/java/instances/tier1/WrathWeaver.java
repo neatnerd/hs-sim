@@ -7,6 +7,7 @@ public class WrathWeaver extends BaseCard {
 
     public WrathWeaver(){
         super();
+        id = 8;
         Attack = 1;
         Health = 1;
         Race = MinionRace.NEUTRAL;
